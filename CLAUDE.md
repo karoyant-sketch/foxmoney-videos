@@ -32,11 +32,18 @@ Format siehe `examples/binance-hack.json`, Szenentypen siehe `SCENES.md`.
 - Jede Szene hat `voice` (deutscher Sprechertext, kurze Sätze, du-Form, zahlen ausgeschrieben, wo die Aussprache sonst unklar wäre,
   keine eckigen Klammern) und passende Grafik-Felder. Mindestens 6 verschiedene Szenentypen pro Video.
 - `chapter` auf 6–9 Szenen setzen (jedes Kapitel ≥ 10 s).
-- `seed` = Slug des Themas (eigene Kamerafahrt pro Video).
+- `seed` = Slug des Themas (eigene Kamerafahrt **und eigene Musik** pro Video).
+- **Karikatur-Figuren:** in 5–7 Szenen ein `character` setzen (siehe SCENES.md) – passend zur Aussage
+  (z. B. Hacker beim Angriff, geschockter Trader beim Kurssturz, besorgte Anlegerin bei Verlusten, Banker bei Zahlen,
+  Moderator `host` beim Erklären/Nachdenken). `hook` und `outro` haben automatisch den Moderator.
+  Optional `say` = kurze Sprechblase (max. 6 Wörter). Nicht in Szenen mit sehr vollem Layout (`cards` mit 4+, `dates`, `link`).
+- Untertitel werden automatisch aus `voice` erzeugt. Hintergrundmusik wird automatisch erzeugt und unter der Stimme leiser gemacht
+  (`music_volume` 0.12–0.2, Standard 0.16). Liegt eine eigene lizenzierte Musikdatei in `app/public/music/`, wird diese genommen.
 - Pflicht: „Keine Anlageberatung“ im Outro-Sprechertext und im `disclaimer`. Keine Kauf-/Verkaufsempfehlung.
 
 ### 4. Stimme mit ElevenLabs
-- Stimme: **Adrian – Sachlich & Kompetent**, voice_id `X3GmkxFRIWulRy3Eaur7`, Modell `eleven_v4`.
+- Stimme: **Marcel – Calm Knowledge Narrator** (ruhige, warme Doku-Erzählerstimme), voice_id `OZx5F3Qe8k5AOBgRq4N0`, Modell `eleven_v4`.
+- Ton: Doku-Erzähler – ruhig, klar, spannend erzählt, nicht marktschreierisch.
 - Zuerst Kosten prüfen: `creative_generate_speech` mit `estimate_only: true` für den gesamten Text.
   Reichen die Credits nicht → **abbrechen**, nichts hochladen, Push-Nachricht an Asdas: „ElevenLabs-Credits leer – Video <Thema> nicht erstellt“.
 - Dann `creative_create_flow` und pro Szene **ein** `creative_generate_speech` (generations_count 1, gleiche flow_id).

@@ -48,11 +48,23 @@ def prepare():
         padded = os.path.join(tmp, f"p{i:02d}.wav")
         sh("ffmpeg", "-y", "-loglevel", "error", "-i", clean, "-af", f"adelay={int(LEAD*1000)},apad,atrim=0:{frames/30}", "-ar", "44100", "-ac", "1", padded)
         parts.append(padded)
-        out.append({**s, "start": start, "dur": frames})
+        out.append({**s, "start": start, "dur": frames, "speech": round(d, 2)})
         start += frames
     lst = os.path.join(tmp, "list.txt")
     open(lst, "w").write("".join(f"file '{p}'\n" for p in parts))
-    sh("ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", lst, "-af", "loudnorm=I=-15:TP=-1.5:LRA=9", "-ar", "44100", os.path.join(APP, "public", "voice.wav"))
+    voice_only = os.path.join(tmp, "voice_only.wav")
+    sh("ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", lst, "-af", "loudnorm=I=-16:TP=-1.5:LRA=9", "-ar", "44100", "-ac", "2", voice_only)
+    # background music: own licensed track if present, else generated original music
+    own = sorted(glob.glob(os.path.join(APP, "public", "music", "*.mp3")) + glob.glob(os.path.join(APP, "public", "music", "*.wav")))
+    music = os.path.join(tmp, "music.wav")
+    if own:
+        sh("ffmpeg", "-y", "-loglevel", "error", "-stream_loop", "-1", "-i", own[0], "-t", f"{start/30:.3f}", "-af", f"afade=t=out:st={max(0, start/30-3):.2f}:d=3", "-ar", "44100", "-ac", "2", music)
+    else:
+        sh(sys.executable, os.path.join(ROOT, "tools", "music.py"), f"{start/30:.3f}", music, str(spec.get("seed", "fox")))
+    mvol = float(spec.get("music_volume", 0.16))
+    fc = (f"[1:a]volume={mvol}[m];[m][0:a]sidechaincompress=threshold=0.025:ratio=5:attack=30:release=500[d];"
+          "[0:a][d]amix=inputs=2:normalize=0:duration=first,loudnorm=I=-14:TP=-1.5:LRA=11[out]")
+    sh("ffmpeg", "-y", "-loglevel", "error", "-i", voice_only, "-i", music, "-filter_complex", fc, "-map", "[out]", "-ar", "44100", os.path.join(APP, "public", "voice.wav"))
     json.dump({"seed": spec.get("seed", spec.get("title", "fox")), "scenes": out, "total": start}, open(os.path.join(APP, "src", "data.json"), "w"), ensure_ascii=False)
     chapters = []
     for s in out:

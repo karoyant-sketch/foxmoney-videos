@@ -18,3 +18,20 @@ Farben: `red`, `green`, `orange`, `blue`, `yellow`. Zahlen animiert: `countTo` +
 | `vault` | Tresor/Wallet öffnet sich, Coins fliegen | `label`, `sublabel`, `info:{title, text}` |
 | `steps` | Anleitung, nummeriert | `steps:[text]` (3–5) |
 | `outro` | Abo-Aufruf | `question`, `disclaimer` |
+
+## Karikatur-Figuren (`character`, in jeder Szene möglich)
+
+```json
+"character": {"kind": "trader", "mood": "shocked", "side": "right", "say": "Was ist da los?"}
+```
+- `kind`: `host` (Moderator, orange, spricht), `hacker` (Kapuze), `banker` (Anzug, Brille), `investor` (Anlegerin), `trader` (Headset)
+- `mood`: `happy`, `explaining`, `shocked`, `worried`, `thinking`, `angry`
+- `side`: `right` oder `left` – die Szene rückt automatisch zur anderen Seite (80 %).
+- `"character": false` schaltet den automatischen Moderator in hook/outro ab.
+
+## 3D
+`bars` sind 3D-Säulen, `hook` hat rotierende 3D-Münzen, `vault` wirft 3D-Münzen, im Hintergrund schweben 3D-Münzen/Würfel,
+und die Kamera kippt bei jedem Szenenwechsel durch den Raum – alles automatisch.
+
+## Video-Felder
+`title`, `seed`, `music_volume` (0.12–0.2), `captions` (Standard an; `false` = aus).

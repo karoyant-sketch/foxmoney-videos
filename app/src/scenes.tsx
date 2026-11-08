@@ -1,6 +1,7 @@
 import React from 'react';
 import {interpolate, Easing, random} from 'remotion';
-import {C, clamp, sp, fadeUp, pop, countUp, de, Panel, Kicker, Title, Coin} from './ui';
+import {C, clamp, sp, fadeUp, pop, countUp, de, Panel, Kicker, Title} from './ui';
+import {Coin3D, Bar3D} from './three';
 
 /* ------------------------------------------------------------------ *
  * Scene library. Each scene in video.json has a "type" plus its fields.
@@ -51,6 +52,8 @@ const Hook: React.FC<{s: SceneSpec; f: number}> = ({s, f}) => {
   return (
     <Wrap style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center'}}>
       <div style={{position: 'absolute', inset: 0, background: `radial-gradient(circle at 50% 50%, ${c}${Math.round(30 + pulse * 40).toString(16)} 0%, transparent 60%)`}} />
+      <Coin3D size={260} color={C.yellow} label="₿" f={f} speed={2.2} tilt={18} style={{position: 'absolute', left: 90, top: 640, opacity: 0.85}} />
+      <Coin3D size={180} color={C.blue} label="Ξ" f={f + 40} speed={-2.8} tilt={-15} style={{position: 'absolute', right: 120, top: 150, opacity: 0.7}} />
       {s.kicker && <Kicker f={f} color={c}>{s.kicker}</Kicker>}
       <div
         style={{
@@ -111,9 +114,13 @@ const Bars: React.FC<{s: SceneSpec; f: number}> = ({s, f}) => {
         const c = col(b.color ?? (k === bars.length - 1 ? 'red' : 'blue'));
         return (
           <div key={k} style={{position: 'absolute', left: x0 + (span / bars.length) * k + (span / bars.length - w) / 2, bottom: 120, width: w, textAlign: 'center'}}>
-            <div style={{color: c, fontSize: 56, fontWeight: 900, opacity: g}}>{b.display ?? de(b.value)}</div>
-            <div style={{height: (600 * Math.abs(b.value)) / max * g, background: `linear-gradient(180deg, ${c}, ${c}55)`, borderRadius: '20px 20px 0 0', boxShadow: `0 0 50px ${c}66`}} />
-            <div style={{color: C.text, fontSize: 36, fontWeight: 800, marginTop: 16}}>{b.label}</div>
+            <div style={{perspective: 1600, perspectiveOrigin: '30% 0%'}}>
+              <div style={{transformStyle: 'preserve-3d', transform: 'rotateX(-12deg) rotateY(-22deg)', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'flex-start', height: 640}}>
+                <div style={{color: c, fontSize: 56, fontWeight: 900, opacity: g, marginBottom: 46, whiteSpace: 'nowrap', textShadow: `0 0 30px ${c}88`}}>{b.display ?? de(b.value)}</div>
+                <Bar3D w={w * 0.82} h={Math.max(8, ((540 * Math.abs(b.value)) / max) * g)} d={w * 0.35} color={c} />
+              </div>
+            </div>
+            <div style={{color: C.text, fontSize: 36, fontWeight: 800, marginTop: 24}}>{b.label}</div>
           </div>
         );
       })}
@@ -395,8 +402,9 @@ const Vault: React.FC<{s: SceneSpec; f: number}> = ({s, f}) => {
           const ang = random(`a${k}`) * Math.PI * 2;
           const dist = 400 + random(`d${k}`) * 500;
           return (
-            <Coin key={k} size={70} color={k % 3 === 0 ? C.blue : C.yellow} label={k % 3 === 0 ? 'Ξ' : '₿'}
-              style={{position: 'absolute', left: 245, top: 245, opacity: t > 0 && t < 1 ? 1 : 0, transform: `translate(${Math.cos(ang) * dist * t}px, ${Math.sin(ang) * dist * t - 200 * Math.sin(t * Math.PI)}px) rotate(${t * 720}deg)`}} />
+            <div key={k} style={{position: 'absolute', left: 245, top: 245, opacity: t > 0 && t < 1 ? 1 : 0, transform: `translate(${Math.cos(ang) * dist * t}px, ${Math.sin(ang) * dist * t - 200 * Math.sin(t * Math.PI)}px) scale(${0.8 + t * 0.6})`}}>
+              <Coin3D size={70} color={k % 3 === 0 ? C.blue : C.yellow} label={k % 3 === 0 ? 'Ξ' : '₿'} f={f + k * 7} speed={14} tilt={25} />
+            </div>
           );
         })}
       </div>
