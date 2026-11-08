@@ -56,7 +56,7 @@ Format siehe `examples/binance-hack.json`, Szenentypen siehe `SCENES.md`.
 cd app && npm i --no-audit --no-fund && cd ..
 python3 tools/build.py prepare     # Audio + Timeline, schreibt work/chapters.txt
 python3 tools/build.py stills      # work/sheet.jpg ansehen (Read) – Überlappungen/abgeschnittener Text? → video.json anpassen, erneut
-python3 tools/build.py render      # ~10–15 min, Ergebnis work/final.mp4 (< 100 MB)
+python3 tools/build.py render      # ~25–30 min, Ergebnis work/final.mp4 (< 100 MB)
 ```
 Rendern im Hintergrund starten und abwarten. Danach 6 Frames mit ffmpeg ziehen und prüfen, Ton mit volumedetect prüfen (nicht stumm).
 

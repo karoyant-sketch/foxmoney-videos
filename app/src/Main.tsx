@@ -93,7 +93,9 @@ export const Main: React.FC = () => {
           const p = POS[k];
           return (
             <div key={k} style={{position: 'absolute', left: p.x, top: p.y, width: W, height: H, transform: `rotate(${p.r}deg)`}}>
-              <SceneWithCharacter s={s} f={frame - s.start} />
+              <div style={{position: 'absolute', inset: 0, transform: 'scale(0.92)', transformOrigin: '50% 0%'}}>
+                <SceneWithCharacter s={s} f={frame - s.start} />
+              </div>
             </div>
           );
         })}
@@ -163,7 +165,14 @@ function chunks(text: string): string[] {
     }
   }
   if (cur.length) out.push(cur.join(' '));
-  return out;
+  // merge very short pieces ("Wichtig:", "Am 29.") into the next one
+  const merged: string[] = [];
+  for (let k = 0; k < out.length; k++) {
+    if (out[k].split(' ').length < 3 && k + 1 < out.length) {
+      out[k + 1] = out[k] + ' ' + out[k + 1];
+    } else merged.push(out[k]);
+  }
+  return merged;
 }
 
 const Captions: React.FC<{s: Timed; local: number}> = ({s, local}) => {
@@ -183,8 +192,8 @@ const Captions: React.FC<{s: Timed; local: number}> = ({s, local}) => {
     }
   }
   return (
-    <div style={{position: 'absolute', left: 0, right: 0, bottom: 56, display: 'flex', justifyContent: 'center'}}>
-      <div style={{maxWidth: 1300, background: 'rgba(5,8,20,0.72)', border: '1px solid rgba(255,255,255,0.08)', color: '#fff', fontSize: 42, fontWeight: 800, padding: '12px 28px', borderRadius: 14, textAlign: 'center', backdropFilter: 'blur(6px)'}}>
+    <div style={{position: 'absolute', left: 0, right: 0, bottom: 22, display: 'flex', justifyContent: 'center'}}>
+      <div style={{maxWidth: 1300, background: 'rgba(5,8,20,0.72)', border: '1px solid rgba(255,255,255,0.08)', color: '#fff', fontSize: 40, fontWeight: 800, padding: '10px 26px', borderRadius: 14, textAlign: 'center', backdropFilter: 'blur(6px)'}}>
         {parts[idx]}
       </div>
     </div>
