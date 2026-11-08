@@ -1,0 +1,5 @@
+node_modules/
+app/public/voice.wav
+app/src/data.json
+work/
+*.log

@@ -1,0 +1,74 @@
+# FOXMONEY – automatische YouTube-Videos
+
+Kanal: **FOXMONEY – Geld Verdienen Online!** (@foxmoney_de), Posty/Postey account_id **2385**, Plattform YOUTUBE.
+Nische: Krypto & Finanzen, Sprache Deutsch, Zielgruppe Deutschland/Österreich/Schweiz.
+Der Inhaber (Asdas) hat angeordnet: 3 Videos pro Woche, **vollautomatisch veröffentlichen, ohne Rückfrage**.
+
+## Ablauf eines Laufs (in dieser Reihenfolge)
+
+### 1. Thema finden
+- `topics.md` lesen – kein Thema der letzten 30 Tage wiederholen.
+- WebSearch (mode standard, mehrere Suchen parallel): aktuelle Krypto-/Finanz-News der letzten 72 h
+  (z. B. „Bitcoin news“, „Krypto News heute“, „Ethereum news“, „Börse news heute“, „Fed Zinsen“, „ETF Bitcoin“).
+- Thema wählen, das gerade trendet **und** sich mit Zahlen/Grafiken erklären lässt.
+- Abwechseln: News-Erklärung, Kurs-Analyse, Wissen/Erklärvideo (z. B. „Was ist …“), Spar-/Geld-Tipps.
+- Fakten mit WebFetch an mindestens 2 Quellen prüfen. Keine Zahl aus dem Gedächtnis. Nichts erfinden.
+
+### 2. Keyword-Recherche (kostenlos)
+```
+python3 tools/keywords.py "<hauptbegriff>" "<zweitbegriff>" > work/keywords.json
+```
+Liefert YouTube-Suchvorschläge (Autocomplete-Score) und Google-Trends (YouTube, DE, 7 Tage).
+Falls `source_ok` false ist (Netzwerk): Keywords aus Schlagzeilen/Suchergebnissen ableiten und im Log vermerken.
+- Titel (max. 70 Zeichen sichtbar, max. 100): stärkstes Keyword **vorne**, Zahl/Emotion, kein Clickbait-Versprechen, das das Video nicht hält.
+- Beschreibung: erste 2 Sätze enthalten Haupt- und Neben-Keywords natürlich; dann Kapitel (aus `work/chapters.txt`),
+  Kommentar-Frage, Abo-Hinweis, Quellen mit Datum, Disclaimer, 3 Hashtags.
+- Tags: 15–25, Gesamtlänge < 480 Zeichen, Mischung aus Short- und Long-Tail, immer „foxmoney“.
+
+### 3. Skript & Szenen → `work/video.json`
+Format siehe `examples/binance-hack.json`, Szenentypen siehe `SCENES.md`.
+- 10–13 Szenen, Gesamt 2–3 Minuten (≈ 330–420 Wörter Sprechertext).
+- Szene 1 = `hook` (starke Zahl/Frage in < 8 s). Letzte Szene = `outro` mit Kommentarfrage.
+- Jede Szene hat `voice` (deutscher Sprechertext, kurze Sätze, du-Form, zahlen ausgeschrieben, wo die Aussprache sonst unklar wäre,
+  keine eckigen Klammern) und passende Grafik-Felder. Mindestens 6 verschiedene Szenentypen pro Video.
+- `chapter` auf 6–9 Szenen setzen (jedes Kapitel ≥ 10 s).
+- `seed` = Slug des Themas (eigene Kamerafahrt pro Video).
+- Pflicht: „Keine Anlageberatung“ im Outro-Sprechertext und im `disclaimer`. Keine Kauf-/Verkaufsempfehlung.
+
+### 4. Stimme mit ElevenLabs
+- Stimme: **Adrian – Sachlich & Kompetent**, voice_id `X3GmkxFRIWulRy3Eaur7`, Modell `eleven_v4`.
+- Zuerst Kosten prüfen: `creative_generate_speech` mit `estimate_only: true` für den gesamten Text.
+  Reichen die Credits nicht → **abbrechen**, nichts hochladen, Push-Nachricht an Asdas: „ElevenLabs-Credits leer – Video <Thema> nicht erstellt“.
+- Dann `creative_create_flow` und pro Szene **ein** `creative_generate_speech` (generations_count 1, gleiche flow_id).
+  Niemals einen Aufruf wiederholen, um es „nochmal zu versuchen“ – das kostet doppelt.
+- `creative_get_flow_run_status` pollen bis fertig, `content_url` jeder Szene mit curl laden:
+  `curl -sSL -o work/voice/NN.mp3 "<content_url>"` (NN = 01, 02, … in Szenenreihenfolge). Die URLs laufen nach ~2 h ab.
+
+### 5. Video bauen
+```
+cd app && npm i --no-audit --no-fund && cd ..
+python3 tools/build.py prepare     # Audio + Timeline, schreibt work/chapters.txt
+python3 tools/build.py stills      # work/sheet.jpg ansehen (Read) – Überlappungen/abgeschnittener Text? → video.json anpassen, erneut
+python3 tools/build.py render      # ~10–15 min, Ergebnis work/final.mp4 (< 100 MB)
+```
+Rendern im Hintergrund starten und abwarten. Danach 6 Frames mit ffmpeg ziehen und prüfen, Ton mit volumedetect prüfen (nicht stumm).
+
+### 6. Hochladen & veröffentlichen (Postey)
+1. `cp work/final.mp4 outbox/<slug>.mp4`, committen, auf `main` pushen.
+2. `upload_media` source_type `url`, url `https://raw.githubusercontent.com/karoyant-sketch/foxmoney-videos/main/outbox/<slug>.mp4`, platform YOUTUBE.
+3. `validate_post_content`, dann `create_post` (account_id 2385, platform YOUTUBE, ein content-Eintrag mit
+   youtube_title, text = Beschreibung, youtube_tags, youtube_category_id "27", youtube_privacy_status "public",
+   media_urls = [cdn_url]) mit idempotency_key = slug.
+4. `publish_draft` (platforms ["YOUTUBE"], idempotency_key = slug + "-pub"). Status mit `get_posts` prüfen bis PUBLISHED
+   (PUBLISHING ist noch nicht live).
+5. `git rm outbox/<slug>.mp4`, committen, pushen (Repo klein halten).
+
+### 7. Abschluss
+- Zeile in `topics.md` anhängen: `YYYY-MM-DD | Thema | Titel | Status` – committen & pushen.
+- Push-Nachricht an Asdas: Titel + Link bzw. Fehlergrund.
+- Bei jedem Fehler: nichts halb veröffentlichen; Fehlergrund in `topics.md` und in der Push-Nachricht.
+
+## Regeln
+- Keine Fotos realer Personen, keine Logos/Marken-Grafiken von Firmen nachbauen (nur Namen als Text).
+- Keine Liedtexte, keine fremden Texte wörtlich übernehmen.
+- Ehrlich bleiben: Prognosen nur als „Warnsignal/Szenario“, nie als sicher.
