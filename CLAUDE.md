@@ -74,9 +74,11 @@ Rendern im Hintergrund starten und abwarten. Danach 6 Frames mit ffmpeg ziehen u
 4. `publish_draft` (platforms ["YOUTUBE"], idempotency_key = slug + "-pub"). Status mit `get_posts` prüfen bis PUBLISHED
    (PUBLISHING ist noch nicht live).
 5. `git rm outbox/<slug>.mp4`, committen, pushen (Repo klein halten).
-6. Thumbnail: `cp work/thumbnail.jpg thumbnails/<slug>.jpg`, committen, pushen. Postey kann bei YouTube kein Thumbnail setzen.
-   Wenn im Lauf ein Browser auf Asdas' Computer erreichbar ist (Built-in-Browser-Tools vorhanden), in YouTube Studio
-   beim Video „Thumbnail hochladen“ setzen. Sonst in der Push-Nachricht den Link
+6. Thumbnail: `cp work/thumbnail.jpg thumbnails/<slug>.jpg`, committen, pushen. Postey kann bei YouTube kein Thumbnail setzen, daher:
+   a) `python3 tools/yt_thumbnail.py "<YouTube-Link aus get_posts live_link>" work/thumbnail.jpg` (offizielle YouTube-API,
+      braucht Umgebungsvariablen YT_CLIENT_ID / YT_CLIENT_SECRET / YT_REFRESH_TOKEN). Exit 0 = erledigt.
+   b) Exit 2/1: wenn ein Browser auf Asdas' Computer erreichbar ist (Built-in-Browser-Tools vorhanden), in YouTube Studio
+      beim Video „Thumbnail hochladen“ setzen. Sonst in der Push-Nachricht den Fehlergrund und den Link
    `https://raw.githubusercontent.com/karoyant-sketch/foxmoney-videos/main/thumbnails/<slug>.jpg` mitschicken.
 
 ### 7. Abschluss
