@@ -39,6 +39,10 @@ Format siehe `examples/binance-hack.json`, Szenentypen siehe `SCENES.md`.
   Optional `say` = kurze Sprechblase (max. 6 Wörter). Nicht in Szenen mit sehr vollem Layout (`cards` mit 4+, `dates`, `link`).
 - Untertitel werden automatisch aus `voice` erzeugt. Hintergrundmusik wird automatisch erzeugt und unter der Stimme leiser gemacht
   (`music_volume` 0.12–0.2, Standard 0.16). Liegt eine eigene lizenzierte Musikdatei in `app/public/music/`, wird diese genommen.
+- **Thumbnail (sehr wichtig für Klicks):** Feld `thumbnail` in video.json:
+  `{"top": "2–3 WÖRTER", "big": "ZAHL/KERN", "bottom": "1–2 WÖRTER!", "color": "red|green|orange|yellow", "arrow": "down|up|none", "character": {"kind": "...", "mood": "shocked|happy|worried|angry"}, "coin": "₿|Ξ|€|$"|false}`.
+  Max. ~6 Wörter gesamt, GROSSBUCHSTABEN, eine Emotion, eine Zahl, passt zum Titel (nicht wiederholen, ergänzen).
+  Rot+Pfeil runter bei Crash/Verlust, Grün+Pfeil hoch bei Rallye, Orange bei Erklärvideos.
 - Pflicht: „Keine Anlageberatung“ im Outro-Sprechertext und im `disclaimer`. Keine Kauf-/Verkaufsempfehlung.
 
 ### 4. Stimme mit ElevenLabs
@@ -56,6 +60,7 @@ Format siehe `examples/binance-hack.json`, Szenentypen siehe `SCENES.md`.
 cd app && npm i --no-audit --no-fund && cd ..
 python3 tools/build.py prepare     # Audio + Timeline, schreibt work/chapters.txt
 python3 tools/build.py stills      # work/sheet.jpg ansehen (Read) – Überlappungen/abgeschnittener Text? → video.json anpassen, erneut
+python3 tools/build.py thumb       # work/thumbnail.jpg ansehen (Read) – Text lesbar, nichts überdeckt? sonst anpassen
 python3 tools/build.py render      # ~25–30 min, Ergebnis work/final.mp4 (< 100 MB)
 ```
 Rendern im Hintergrund starten und abwarten. Danach 6 Frames mit ffmpeg ziehen und prüfen, Ton mit volumedetect prüfen (nicht stumm).
@@ -69,6 +74,10 @@ Rendern im Hintergrund starten und abwarten. Danach 6 Frames mit ffmpeg ziehen u
 4. `publish_draft` (platforms ["YOUTUBE"], idempotency_key = slug + "-pub"). Status mit `get_posts` prüfen bis PUBLISHED
    (PUBLISHING ist noch nicht live).
 5. `git rm outbox/<slug>.mp4`, committen, pushen (Repo klein halten).
+6. Thumbnail: `cp work/thumbnail.jpg thumbnails/<slug>.jpg`, committen, pushen. Postey kann bei YouTube kein Thumbnail setzen.
+   Wenn im Lauf ein Browser auf Asdas' Computer erreichbar ist (Built-in-Browser-Tools vorhanden), in YouTube Studio
+   beim Video „Thumbnail hochladen“ setzen. Sonst in der Push-Nachricht den Link
+   `https://raw.githubusercontent.com/karoyant-sketch/foxmoney-videos/main/thumbnails/<slug>.jpg` mitschicken.
 
 ### 7. Abschluss
 - Zeile in `topics.md` anhängen: `YYYY-MM-DD | Thema | Titel | Status` – committen & pushen.

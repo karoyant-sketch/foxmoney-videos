@@ -65,7 +65,7 @@ def prepare():
     fc = (f"[1:a]volume={mvol}[m];[m][0:a]sidechaincompress=threshold=0.025:ratio=5:attack=30:release=500[d];"
           "[0:a][d]amix=inputs=2:normalize=0:duration=first,loudnorm=I=-14:TP=-1.5:LRA=11[out]")
     sh("ffmpeg", "-y", "-loglevel", "error", "-i", voice_only, "-i", music, "-filter_complex", fc, "-map", "[out]", "-ar", "44100", os.path.join(APP, "public", "voice.wav"))
-    json.dump({"seed": spec.get("seed", spec.get("title", "fox")), "scenes": out, "total": start}, open(os.path.join(APP, "src", "data.json"), "w"), ensure_ascii=False)
+    json.dump({"seed": spec.get("seed", spec.get("title", "fox")), "thumbnail": spec.get("thumbnail", {}), "captions": spec.get("captions", True), "scenes": out, "total": start}, open(os.path.join(APP, "src", "data.json"), "w"), ensure_ascii=False)
     chapters = []
     for s in out:
         if s.get("chapter"):
@@ -104,6 +104,12 @@ def stills():
     print(os.path.join(WORK, "sheet.jpg"))
 
 
+def thumb():
+    out = os.path.join(WORK, "thumbnail.jpg")
+    remotion("still", "src/index.ts", "Thumbnail", out, "--frame=0", "--jpeg-quality=90")
+    print(out, f"{os.path.getsize(out)/1e6:.2f} MB")
+
+
 def render():
     raw = os.path.join(WORK, "raw_tmp.mp4")
     remotion("render", "src/index.ts", "Main", raw, "--codec=h264", "--crf=20", "--concurrency=2", "--jpeg-quality=90", "--audio-bitrate=192k")
@@ -115,4 +121,4 @@ def render():
 
 
 if __name__ == "__main__":
-    {"prepare": prepare, "stills": stills, "render": render}[sys.argv[1]]()
+    {"prepare": prepare, "stills": stills, "thumb": thumb, "render": render}[sys.argv[1]]()

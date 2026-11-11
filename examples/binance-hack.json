@@ -336,5 +336,17 @@
    "voice": "Wenn dir das Video geholfen hat, abonniere Fox Money und schreib mir in die Kommentare: Kaufst du den Dip – oder wartest du ab? Wichtig: Das ist keine Anlageberatung. Bis zum nächsten Mal!"
   }
  ],
- "music_volume": 0.16
+ "music_volume": 0.16,
+ "thumbnail": {
+  "top": "BINANCE GEHACKT",
+  "big": "6,3 MRD $",
+  "bottom": "WEG!",
+  "color": "red",
+  "arrow": "down",
+  "character": {
+   "kind": "host",
+   "mood": "shocked"
+  },
+  "coin": "₿"
+ }
 }
