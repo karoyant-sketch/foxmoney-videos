@@ -1,47 +1,254 @@
 {
- "title": "Bitcoin Haltefrist vor dem Aus? Krypto Steuer 2027 einfach erklärt 🧾",
+ "title": "Krypto Steuer 2027: Fällt die Bitcoin Haltefrist? Einfach erklärt 🧾",
  "seed": "bitcoin-haltefrist-2027",
  "music_volume": 0.16,
- "thumbnail": {"top": "STEUERFREI", "big": "26 %?", "bottom": "BALD VORBEI!", "color": "red", "arrow": "none", "character": {"kind": "investor", "mood": "worried"}, "coin": "₿"},
+ "thumbnail": {
+  "top": "STEUERFREI VORBEI?",
+  "big": "26 %",
+  "bottom": "AB 2027?",
+  "color": "red",
+  "arrow": "none",
+  "character": {
+   "kind": "investor",
+   "mood": "shocked"
+  },
+  "coin": "₿"
+ },
  "scenes": [
-  {"type": "hook", "chapter": "0 % oder 26 % Steuer?", "kicker": "Krypto-Steuer · Stand November 2026", "countTo": 26.375, "decimals": 3, "suffix": " %", "line": "STATT NULL PROZENT?", "sub": "Die Bitcoin-Haltefrist steht auf der Kippe", "color": "red",
-   "voice": "Null Prozent Steuer – oder über sechsundzwanzig Prozent? Genau darum geht es gerade bei Bitcoin in Deutschland. Die berühmte Haltefrist steht auf der Kippe."},
-  {"type": "stat", "chapter": "So gilt es heute: die Haltefrist", "kicker": "Die Regel heute", "icon": "⏳", "text": "12 Monate", "label": "halten = Gewinn steuerfrei", "note": "Verkauf vorher: persönlicher Steuersatz", "color": "green",
-   "character": {"kind": "investor", "mood": "happy", "side": "right"},
-   "voice": "Bisher gilt eine einfache Regel. Wer Bitcoin oder andere Kryptowerte länger als ein Jahr hält, zahlt auf den Gewinn keine Steuer. Verkaufst du früher, gilt dein persönlicher Steuersatz – bis zu fünfundvierzig Prozent plus Soli."},
-  {"type": "stat", "kicker": "So viele sind betroffen", "icon": "👥", "countTo": 8.9, "decimals": 1, "suffix": " Mio.", "label": "Erwachsene in Deutschland besitzen Krypto", "note": "12,8 % laut YouGov-Umfrage für BearingPoint", "color": "blue",
-   "voice": "Und das betrifft viele. Laut einer YouGov-Umfrage besitzen knapp neun Millionen Erwachsene in Deutschland Kryptowährungen."},
-  {"type": "compare", "chapter": "Der Plan des Finanzministeriums", "kicker": "Der Plan", "title": "Krypto wie Aktien besteuern",
-   "left": {"title": "Geplant ab 2027", "icon": "🧾", "points": ["Gewinne immer steuerpflichtig", "25 % Abgeltungsteuer + Soli", "egal wie lange gehalten"]},
-   "right": {"title": "Regel heute", "icon": "⏳", "points": ["nach 12 Monaten steuerfrei", "vorher persönlicher Satz", "Krypto = privates Wirtschaftsgut"]},
+  {
+   "type": "hook",
+   "chapter": "0 % oder 26 % Steuer?",
+   "kicker": "Krypto-Steuer · Stand November 2026",
+   "countTo": 26.375,
+   "decimals": 3,
+   "suffix": " %",
+   "line": "STATT NULL PROZENT?",
+   "sub": "Die Bitcoin-Haltefrist steht auf der Kippe",
+   "color": "red",
+   "voice": "Null Prozent Steuer – oder über sechsundzwanzig Prozent? Genau darum geht es gerade bei Bitcoin in Deutschland. Die berühmte Haltefrist steht auf der Kippe."
+  },
+  {
+   "type": "stat",
+   "chapter": "So gilt es heute: die Haltefrist",
+   "kicker": "Die Regel heute",
+   "icon": "⏳",
+   "text": "12 Monate",
+   "label": "halten = Gewinn steuerfrei",
+   "note": "Verkauf vorher: persönlicher Steuersatz",
+   "color": "green",
+   "character": {
+    "kind": "investor",
+    "mood": "happy",
+    "side": "right"
+   },
+   "voice": "Bisher gilt eine einfache Regel. Wer Bitcoin oder andere Kryptowerte länger als ein Jahr hält, zahlt auf den Gewinn keine Steuer. Verkaufst du früher, gilt dein persönlicher Steuersatz – bis zu fünfundvierzig Prozent plus Soli."
+  },
+  {
+   "type": "stat",
+   "kicker": "So viele sind betroffen",
+   "icon": "👥",
+   "countTo": 8.9,
+   "decimals": 1,
+   "suffix": " Mio.",
+   "label": "Erwachsene in Deutschland besitzen Krypto",
+   "note": "12,8 % laut YouGov-Umfrage für BearingPoint",
+   "color": "blue",
+   "voice": "Und das betrifft viele. Laut einer YouGov-Umfrage besitzen knapp neun Millionen Erwachsene in Deutschland Kryptowährungen."
+  },
+  {
+   "type": "compare",
+   "chapter": "Der Plan des Finanzministeriums",
+   "kicker": "Der Plan",
+   "title": "Krypto wie Aktien besteuern",
+   "left": {
+    "title": "Geplant ab 2027",
+    "icon": "🧾",
+    "points": [
+     "Gewinne immer steuerpflichtig",
+     "25 % Abgeltungsteuer + Soli",
+     "egal wie lange gehalten"
+    ]
+   },
+   "right": {
+    "title": "Regel heute",
+    "icon": "⏳",
+    "points": [
+     "nach 12 Monaten steuerfrei",
+     "vorher persönlicher Satz",
+     "Krypto = privates Wirtschaftsgut"
+    ]
+   },
    "slogan": "HALTEDAUER WÄRE EGAL",
-   "voice": "Das Bundesfinanzministerium unter Lars Klingbeil will das ändern. Krypto soll steuerlich behandelt werden wie Aktien und ETFs. Das heißt: Gewinne wären immer steuerpflichtig – egal, wie lange du hältst."},
-  {"type": "bars", "chapter": "Rechenbeispiel: 10.000 € Gewinn", "kicker": "Rechenbeispiel", "title": "10.000 € Gewinn – so viel Steuer",
-   "bars": [{"label": "Heute (> 1 Jahr)", "value": 0.05, "display": "0 €", "color": "green"}, {"label": "Plan ab 2027", "value": 2637.5, "display": "2.637,50 €", "color": "red"}],
-   "callout": "26,375 %", "calloutSub": "Abgeltungsteuer + Soli, ohne Kirchensteuer",
-   "character": {"kind": "trader", "mood": "shocked", "side": "right", "say": "So viel?!"},
-   "voice": "Ein Rechenbeispiel. Du machst zehntausend Euro Gewinn mit Bitcoin. Heute zahlst du darauf nach einem Jahr: null Euro. Nach dem Plan wären es fünfundzwanzig Prozent Abgeltungsteuer plus Soli. Zusammen rund zweitausendsechshundertvierzig Euro – ohne Kirchensteuer."},
-  {"type": "stat", "kicker": "Warum das Ganze?", "icon": "🏛️", "countTo": 3, "decimals": 0, "prefix": "bis ", "suffix": " Mrd. €", "label": "erhoffte Mehreinnahmen", "note": "Schätzung des Finanzministeriums – Kritiker zweifeln", "color": "orange",
-   "character": {"kind": "banker", "mood": "happy", "side": "left", "say": "Der Staat braucht Geld."},
-   "voice": "Und warum das Ganze? Der Staat braucht Geld. Das Finanzministerium hofft laut Berichten auf bis zu drei Milliarden Euro zusätzliche Steuereinnahmen. Kritiker halten das für zu optimistisch, denn Kryptokurse schwanken stark."},
-  {"type": "vault", "chapter": "Bestandsschutz für alte Coins", "kicker": "Gute Nachricht", "title": "Alte Coins\nbleiben geschützt", "label": "ALT-BESTAND", "sublabel": "GEKAUFT BIS 31.12.2026",
-   "info": {"title": "Bestandsschutz", "text": "Coins, die bis zum 31.12.2026 angeschafft wurden, sollen laut Entwurf weiter nach der alten Haltefrist-Regel besteuert werden."},
-   "character": {"kind": "host", "mood": "explaining", "side": "right"},
-   "voice": "Wichtig für dich: Laut Entwurf gibt es einen Bestandsschutz. Coins, die bis zum einunddreißigsten Dezember zweitausendsechsundzwanzig gekauft wurden, sollen weiter nach der alten Regel laufen. Die neue Steuer träfe also nur Käufe ab dem ersten Januar zweitausendsiebenundzwanzig."},
-  {"type": "dates", "chapter": "Zeitplan: Kabinett-Termin geplatzt", "kicker": "Beschlossen ist noch nichts", "title": "Der Zeitplan",
-   "items": [{"top": "SEP", "big": "2026", "title": "Referentenentwurf", "sub": "liegt vor"}, {"top": "OKT", "big": "14.", "title": "Kabinett", "sub": "Termin geplatzt", "color": "red"}, {"top": "JAN", "big": "2027", "title": "Geplanter Start", "sub": "noch offen", "color": "orange"}],
-   "voice": "Aber: Beschlossen ist noch gar nichts. Seit Ende September liegt ein Entwurf vor. Ein Kabinettstermin Mitte Oktober ist geplatzt. Das Vorhaben steckt weiter in der Abstimmung innerhalb der Regierung. Geplanter Start bleibt der erste Januar zweitausendsiebenundzwanzig."},
-  {"type": "cards", "chapter": "Widerstand: Union & Petition", "kicker": "Gegenwind", "title": "Der Widerstand wächst",
-   "cards": [{"icon": "✍️", "title": "44.000+", "sub": "Unterschriften für die Petition"}, {"icon": "🤝", "title": "Union skeptisch", "sub": "sieht keinen Grund für Systemwechsel"}, {"icon": "🗳️", "title": "Bundesrat", "sub": "muss zustimmen"}],
-   "character": {"kind": "investor", "mood": "angry", "side": "right", "say": "Hände weg von der Haltefrist!"},
-   "voice": "Der Widerstand ist groß. Über vierundvierzigtausend Menschen haben eine Petition für die Haltefrist unterstützt. Die Union, also der Koalitionspartner, sieht keinen überzeugenden Grund für einen Systemwechsel. Und das Gesetz braucht auch den Bundesrat."},
-  {"type": "stat", "kicker": "Stimmungsbild Oktober 2026", "icon": "🎲", "countTo": 65, "decimals": 0, "suffix": " %", "label": "geschätzte Chance auf das Aus", "note": "Umfrage: 41 Branchenexperten (BTC-ECHO / IU) · keine Prognose", "color": "yellow",
-   "character": {"kind": "host", "mood": "thinking", "side": "right"},
-   "voice": "Kommt das Aus trotzdem? In einer Umfrage von BTC-ECHO schätzten einundvierzig Branchenexperten die Chance im Oktober auf rund fünfundsechzig Prozent. Das ist ein Stimmungsbild – keine sichere Prognose."},
-  {"type": "steps", "chapter": "Was du jetzt beachten solltest", "kicker": "Checkliste", "title": "Was du jetzt tun kannst",
-   "steps": ["Kaufdatum jeder Position dokumentieren", "Transaktionen von Börsen & Wallets exportieren", "Keine Panik – das Gesetz ist noch offen", "Im Zweifel: Steuerberater fragen"],
-   "voice": "Was heißt das für dich? Erstens: Dokumentiere bei jedem Kauf das Datum. Mit einem Bestandsschutz wird das noch wichtiger. Zweitens: Exportiere deine Transaktionen von Börsen und Wallets. Drittens: Keine Panik, das Gesetz ist noch offen. Und im Zweifel fragst du einen Steuerberater."},
-  {"type": "outro", "chapter": "Fazit", "question": "Haltefrist abschaffen – fair oder Fehler?", "disclaimer": "Keine Anlage- oder Steuerberatung · Quellen: BTC-ECHO, BISON, t-online, Börse Online",
-   "voice": "Und jetzt du: Ist die Abschaffung der Haltefrist fair – oder ein Fehler? Schreib es in die Kommentare und abonniere Fox Money, damit du erfährst, wie es weitergeht. Wichtig: Das ist keine Anlageberatung und keine Steuerberatung. Bis zum nächsten Mal!"}
+   "voice": "Das Bundesfinanzministerium unter Lars Klingbeil will das ändern. Krypto soll steuerlich behandelt werden wie Aktien und ETFs. Das heißt: Gewinne wären immer steuerpflichtig – egal, wie lange du hältst."
+  },
+  {
+   "type": "bars",
+   "chapter": "Rechenbeispiel: 10.000 € Gewinn",
+   "kicker": "Rechenbeispiel",
+   "title": "10.000 € Gewinn – so viel Steuer",
+   "bars": [
+    {
+     "label": "Heute (> 1 Jahr)",
+     "value": 0.05,
+     "display": "0 €",
+     "color": "green"
+    },
+    {
+     "label": "Plan ab 2027",
+     "value": 2637.5,
+     "display": "2.637,50 €",
+     "color": "red"
+    }
+   ],
+   "callout": "26,4 %",
+   "calloutSub": "Abgeltungsteuer + Soli (ohne Kirchensteuer)",
+   "character": {
+    "kind": "trader",
+    "mood": "shocked",
+    "side": "right",
+    "say": "So viel?!"
+   },
+   "voice": "Ein Rechenbeispiel. Du machst zehntausend Euro Gewinn mit Bitcoin. Heute zahlst du darauf nach einem Jahr: null Euro. Nach dem Plan wären es fünfundzwanzig Prozent Abgeltungsteuer plus Soli. Zusammen rund zweitausendsechshundertvierzig Euro – ohne Kirchensteuer."
+  },
+  {
+   "type": "stat",
+   "kicker": "Warum das Ganze?",
+   "icon": "🏛️",
+   "countTo": 3,
+   "decimals": 0,
+   "prefix": "bis ",
+   "suffix": " Mrd. €",
+   "label": "erhoffte Mehreinnahmen",
+   "note": "Schätzung des Finanzministeriums – Kritiker zweifeln",
+   "color": "orange",
+   "character": {
+    "kind": "banker",
+    "mood": "happy",
+    "side": "left",
+    "say": "Der Staat braucht Geld."
+   },
+   "voice": "Und warum das Ganze? Der Staat braucht Geld. Das Finanzministerium hofft laut Berichten auf bis zu drei Milliarden Euro zusätzliche Steuereinnahmen. Kritiker halten das für zu optimistisch, denn Kryptokurse schwanken stark."
+  },
+  {
+   "type": "vault",
+   "chapter": "Bestandsschutz für alte Coins",
+   "kicker": "Gute Nachricht",
+   "title": "Alte Coins\nbleiben geschützt",
+   "label": "ALT-BESTAND",
+   "sublabel": "GEKAUFT BIS 31.12.2026",
+   "info": {
+    "title": "Bestandsschutz",
+    "text": "Coins, die bis zum 31.12.2026 angeschafft wurden, sollen laut Entwurf weiter nach der alten Haltefrist-Regel besteuert werden."
+   },
+   "character": {
+    "kind": "host",
+    "mood": "explaining",
+    "side": "right"
+   },
+   "voice": "Wichtig für dich: Laut Entwurf gibt es einen Bestandsschutz. Coins, die bis zum einunddreißigsten Dezember zweitausendsechsundzwanzig gekauft wurden, sollen weiter nach der alten Regel laufen. Die neue Steuer träfe also nur Käufe ab dem ersten Januar zweitausendsiebenundzwanzig."
+  },
+  {
+   "type": "dates",
+   "chapter": "Zeitplan: Kabinett erneut vertagt",
+   "kicker": "Beschlossen ist noch nichts",
+   "title": "Der Zeitplan",
+   "items": [
+    {
+     "top": "SEP",
+     "big": "2026",
+     "title": "Referentenentwurf",
+     "sub": "liegt vor"
+    },
+    {
+     "top": "OKT",
+     "big": "14.",
+     "title": "Kabinett",
+     "sub": "Termin geplatzt",
+     "color": "red"
+    },
+    {
+     "top": "NOV",
+     "big": "11.",
+     "title": "Wieder vertagt",
+     "sub": "kein Beschluss",
+     "color": "red"
+    },
+    {
+     "top": "JAN",
+     "big": "2027",
+     "title": "Geplanter Start",
+     "sub": "noch offen",
+     "color": "orange"
+    }
+   ],
+   "voice": "Aber: Beschlossen ist noch gar nichts. Seit Ende September liegt ein Entwurf vor. Ein Kabinettstermin Mitte Oktober ist geplatzt. Das Vorhaben steckt weiter in der Abstimmung innerhalb der Regierung. Geplanter Start bleibt der erste Januar zweitausendsiebenundzwanzig."
+  },
+  {
+   "type": "cards",
+   "chapter": "Widerstand: Union & Petition",
+   "kicker": "Gegenwind",
+   "title": "Der Widerstand wächst",
+   "cards": [
+    {
+     "icon": "✍️",
+     "title": "44.000+",
+     "sub": "Unterschriften für die Petition"
+    },
+    {
+     "icon": "🤝",
+     "title": "Union skeptisch",
+     "sub": "sieht keinen Grund für Systemwechsel"
+    },
+    {
+     "icon": "🗳️",
+     "title": "Bundesrat",
+     "sub": "muss zustimmen"
+    }
+   ],
+   "character": {
+    "kind": "investor",
+    "mood": "angry",
+    "side": "right",
+    "say": "Hände weg von der Haltefrist!"
+   },
+   "voice": "Der Widerstand ist groß. Über vierundvierzigtausend Menschen haben eine Petition für die Haltefrist unterstützt. Die Union, also der Koalitionspartner, sieht keinen überzeugenden Grund für einen Systemwechsel. Und das Gesetz braucht auch den Bundesrat."
+  },
+  {
+   "type": "stat",
+   "kicker": "Stimmungsbild Oktober 2026",
+   "icon": "🎲",
+   "countTo": 65,
+   "decimals": 0,
+   "suffix": " %",
+   "label": "geschätzte Chance auf das Aus",
+   "note": "Umfrage: 41 Branchenexperten (BTC-ECHO / IU) · keine Prognose",
+   "color": "yellow",
+   "character": {
+    "kind": "host",
+    "mood": "thinking",
+    "side": "right"
+   },
+   "voice": "Kommt das Aus trotzdem? In einer Umfrage von BTC-ECHO schätzten einundvierzig Branchenexperten die Chance im Oktober auf rund fünfundsechzig Prozent. Das ist ein Stimmungsbild – keine sichere Prognose."
+  },
+  {
+   "type": "steps",
+   "chapter": "Was du jetzt beachten solltest",
+   "kicker": "Checkliste",
+   "title": "Was du jetzt tun kannst",
+   "steps": [
+    "Kaufdatum jeder Position dokumentieren",
+    "Transaktionen von Börsen & Wallets exportieren",
+    "Keine Panik – das Gesetz ist noch offen",
+    "Im Zweifel: Steuerberater fragen"
+   ],
+   "voice": "Was heißt das für dich? Erstens: Dokumentiere bei jedem Kauf das Datum. Mit einem Bestandsschutz wird das noch wichtiger. Zweitens: Exportiere deine Transaktionen von Börsen und Wallets. Drittens: Keine Panik, das Gesetz ist noch offen. Und im Zweifel fragst du einen Steuerberater."
+  },
+  {
+   "type": "outro",
+   "chapter": "Fazit",
+   "question": "Haltefrist abschaffen – fair oder Fehler?",
+   "disclaimer": "Keine Anlage- oder Steuerberatung · Quellen: BTC-ECHO, BISON, t-online, Börse Online, Kryptorevolution",
+   "voice": "Und jetzt du: Ist die Abschaffung der Haltefrist fair – oder ein Fehler? Schreib es in die Kommentare und abonniere Fox Money, damit du erfährst, wie es weitergeht. Wichtig: Das ist keine Anlageberatung und keine Steuerberatung. Bis zum nächsten Mal!"
+  }
  ]
 }
