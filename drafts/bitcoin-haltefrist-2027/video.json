@@ -100,8 +100,8 @@
      "color": "red"
     }
    ],
-   "callout": "26,4 %",
-   "calloutSub": "Abgeltungsteuer + Soli (ohne Kirchensteuer)",
+   "callout": "≈26%",
+   "calloutSub": "Abgeltungsteuer + Soli (26,375 %)",
    "character": {
     "kind": "trader",
     "mood": "shocked",
