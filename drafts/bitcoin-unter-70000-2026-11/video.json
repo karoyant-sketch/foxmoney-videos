@@ -1,0 +1,159 @@
+{
+ "title": "Bitcoin Crash unter 70.000 $: 4 Gründe für den Absturz 📉",
+ "seed": "bitcoin-unter-70000-2026-11",
+ "music_volume": 0.16,
+ "scenes": [
+  {
+   "type": "hook",
+   "chapter": "Bitcoin fällt unter 70.000 $",
+   "kicker": "⚠ Breaking · 13. November 2026",
+   "text": "< 70.000 $",
+   "line": "ERSTMALS SEIT AUGUST.",
+   "sub": "Über 1,3 Mrd. $ in 24 Stunden liquidiert",
+   "color": "red",
+   "voice": "Bitcoin ist unter siebzigtausend Dollar gefallen. Zum ersten Mal seit August. In nur vierundzwanzig Stunden wurden über eine Milliarde Dollar an Wetten vernichtet. Was steckt dahinter?"
+  },
+  {
+   "type": "chart",
+   "kicker": "Marktreaktion · 24 Stunden",
+   "title": "Bitcoin rutscht ab",
+   "points": [80500, 80200, 79400, 78100, 76600, 75700, 76200, 75900, 75300, 74800, 75100, 74600, 74200, 73700, 73500, 73300, 73400, 72500, 71400, 70100, 68900, 67922, 68400, 68650],
+   "priceLabel": "≈ 68.650 $",
+   "ticks": [
+    {"sym": "BTC", "val": "6,2 %", "up": false},
+    {"sym": "ETH", "val": "5,2 %", "up": false},
+    {"sym": "SOL", "val": "2,9 %", "up": false}
+   ],
+   "voice": "Am Freitagmorgen rutschte Bitcoin bis auf knapp achtundsechzigtausend Dollar. Ein Minus von über sechs Prozent an einem Tag. Ether fiel sogar erstmals seit August unter zweitausend Dollar.",
+   "character": {"kind": "trader", "mood": "shocked", "side": "right"}
+  },
+  {
+   "type": "stat",
+   "kicker": "Stimmung am Markt",
+   "icon": "😱",
+   "color": "red",
+   "countTo": 20,
+   "decimals": 0,
+   "label": "Angst-und-Gier-Index",
+   "note": "Extreme Angst · tiefster Wert seit 8. Juli",
+   "voice": "Die Stimmung ist im Keller. Der Angst-und-Gier-Index steht bei zwanzig. Das bedeutet extreme Angst. So tief war er seit Juli nicht mehr.",
+   "character": {"kind": "investor", "mood": "worried", "side": "left", "say": "Wie tief geht das noch?"}
+  },
+  {
+   "type": "cards",
+   "chapter": "4 Gründe für den Crash",
+   "kicker": "Kein einzelner Auslöser",
+   "title": "4 Kräfte drücken den Kurs",
+   "cards": [
+    {"icon": "💥", "title": "Liquidationen", "sub": "über 1,3 Mrd.$ in 24 h", "color": "red"},
+    {"icon": "💸", "title": "ETF-Abflüsse", "sub": "≈ 1,44 Mrd.$ in 5 Tagen", "color": "orange"},
+    {"icon": "🏦", "title": "Fed-Zinsangst", "sub": "Inflation über Erwartung", "color": "blue"},
+    {"icon": "⛏️", "title": "Miner verkaufen", "sub": "MARA: 13.597 BTC", "color": "yellow"}
+   ],
+   "voice": "Einen einzelnen Auslöser gibt es nicht. Es sind vier Kräfte, die gleichzeitig auf den Kurs drücken. Schauen wir sie uns nacheinander an."
+  },
+  {
+   "type": "stat",
+   "chapter": "Grund 1: Liquidationen",
+   "kicker": "Grund 1 · Der Hebel",
+   "icon": "💥",
+   "color": "red",
+   "countTo": 1.3,
+   "decimals": 1,
+   "prefix": "> ",
+   "suffix": " Mrd.$",
+   "label": "zwangsweise liquidiert in 24 Stunden",
+   "note": "vor allem Wetten auf steigende Kurse (CoinGlass)",
+   "voice": "Grund eins: der Hebel. Viele Trader hatten mit geliehenem Geld auf steigende Kurse gewettet. Als der Kurs fiel, wurden ihre Positionen zwangsweise geschlossen. Über eins Komma drei Milliarden Dollar in vierundzwanzig Stunden. Jeder Zwangsverkauf drückt den Kurs weiter. Eine Kettenreaktion.",
+   "character": {"kind": "trader", "mood": "angry", "side": "right", "say": "Mein Hebel ist weg!"}
+  },
+  {
+   "type": "bars",
+   "chapter": "Grund 2: ETF-Abflüsse",
+   "kicker": "Grund 2 · US-Bitcoin-ETFs",
+   "title": "Großanleger ziehen ab",
+   "bars": [
+    {"label": "4. Nov.", "value": 102.26, "display": "102,3 Mrd.$", "color": "blue"},
+    {"label": "12. Nov.", "value": 93.7, "display": "93,7 Mrd.$", "color": "red"}
+   ],
+   "callout": "−8,6 Mrd.$",
+   "calloutSub": "ETF-Vermögen in gut einer Woche",
+   "voice": "Grund zwei: Große Anleger ziehen Geld ab. Aus den US-Bitcoin-ETFs flossen in fünf Handelstagen rund eins Komma vier Milliarden Dollar ab. Das verwaltete Vermögen schrumpfte in gut einer Woche von hundertzwei auf unter vierundneunzig Milliarden Dollar.",
+   "character": {"kind": "banker", "mood": "worried", "side": "left"}
+  },
+  {
+   "type": "link",
+   "chapter": "Grund 3: Zinserhöhung im Dezember?",
+   "kicker": "Grund 3 · Die US-Notenbank",
+   "title": "Inflation weckt\nZinsangst",
+   "from": "Inflation 0,4 %",
+   "to": "Fed",
+   "stamp": "DEZ 8.–9.",
+   "stat": {"countTo": 0.5, "decimals": 1, "suffix": " %-Pkt.", "label": "Zinserhöhung im Gespräch\n(Fed-Gouverneur Waller)"},
+   "voice": "Grund drei: die US-Notenbank. Die Preise stiegen im Oktober um null Komma vier Prozent zum Vormonat. Mehr als erwartet. Fed-Gouverneur Christopher Waller bringt sogar eine Zinserhöhung um einen halben Prozentpunkt im Dezember ins Spiel. Höhere Zinsen machen Bitcoin weniger attraktiv, denn er bringt selbst keine Zinsen."
+  },
+  {
+   "type": "vault",
+   "chapter": "Grund 4: Miner MARA verkauft",
+   "kicker": "Grund 4 · Die Miner",
+   "title": "MARA leert\nseine Reserve",
+   "label": "MARA",
+   "sublabel": "BITCOIN-RESERVE",
+   "info": {"title": "Was ist ein Miner?", "text": "Eine Firma, die mit riesigen Rechenzentren neue Bitcoins erzeugt – und sie oft verkauft, um Kosten zu decken."},
+   "voice": "Grund vier: die Miner. MARA ist einer der größten Bitcoin-Miner der Welt. Seit Ende September hat die Firma dreizehntausendfünfhundertsiebenundneunzig Bitcoins verkauft. Für rund eins Komma eins Milliarden Dollar."
+  },
+  {
+   "type": "bars",
+   "kicker": "MARA · Q3-Bericht vom 9. November",
+   "title": "40 % des Bestands verkauft",
+   "bars": [
+    {"label": "Bestand 30.9.", "value": 34012, "display": "34.012 BTC", "color": "blue"},
+    {"label": "danach verkauft", "value": 13597, "display": "13.597 BTC", "color": "red"}
+   ],
+   "callout": "≈ 40 %",
+   "calloutSub": "Ø-Verkaufspreis ≈ 81.039 $",
+   "voice": "Das sind rund vierzig Prozent dessen, was MARA Ende September besaß. Mit siebenhundertfünfzig Millionen Dollar zahlte MARA Kredite zurück, die mit Bitcoin besichert waren. Der Chef betont, das sei keine Abkehr vom Bitcoin. Aber MARA will auch künftig verkaufen, wenn Geld gebraucht wird.",
+   "character": {"kind": "banker", "mood": "explaining", "side": "right"}
+  },
+  {
+   "type": "cards",
+   "chapter": "Wichtige Marken: 68.000 & 66.000 $",
+   "kicker": "Charttechnik · Szenarien, keine Prognose",
+   "title": "Diese Marken zählen jetzt",
+   "cards": [
+    {"icon": "📏", "title": "200-Wochen-Linie", "sub": "≈ 67.990 $", "color": "orange"},
+    {"icon": "🛟", "title": "Nächste Unterstützung", "sub": "≈ 66.000 $", "color": "green"},
+    {"icon": "🧱", "title": "Widerstand", "sub": "73.570 – 76.530 $", "color": "red"}
+   ],
+   "voice": "Wie geht es weiter? Charttechniker schauen jetzt auf die Zweihundert-Wochen-Linie bei knapp achtundsechzigtausend Dollar. Genau dort notiert Bitcoin gerade. Hält sie nicht, gilt die Zone um sechsundsechzigtausend Dollar als nächste Unterstützung. Nach oben wird der Bereich um vierundsiebzig- bis sechsundsiebzigtausend Dollar zum Widerstand. Das sind Szenarien, keine Garantie.",
+   "character": {"kind": "host", "mood": "thinking", "side": "right"}
+  },
+  {
+   "type": "compare",
+   "chapter": "Die Lektion: Hebel",
+   "kicker": "Die Lektion",
+   "title": "Wer behält die Kontrolle?",
+   "left": {"title": "Trading mit Hebel", "icon": "🎰", "points": ["geliehenes Geld", "Zwangsverkauf im Crash", "Totalverlust möglich"]},
+   "right": {"title": "Ohne Hebel", "icon": "🧘", "points": ["nur eigenes Geld", "kein Zwangsverkauf", "du entscheidest selbst"]},
+   "slogan": "KEIN HEBEL – KEINE LIQUIDATION",
+   "voice": "Und die wichtigste Lektion aus diesem Crash? Wer mit Hebel handelt, gibt die Kontrolle ab. Bei einem Kurssturz wird automatisch verkauft. Oft im schlechtesten Moment. Wer ohne Hebel investiert, wird nicht zwangsweise rausgeworfen und entscheidet selbst.",
+   "character": {"kind": "host", "mood": "explaining", "side": "right"}
+  },
+  {
+   "type": "outro",
+   "chapter": "Fazit",
+   "question": "Bitcoin unter 70.000 $: Chance oder Warnsignal?",
+   "disclaimer": "Keine Anlageberatung · Quellen: CoinGecko, CoinGlass, SoSoValue, Cryptoticker, Crypto.news, Coin-Turk",
+   "voice": "Wenn dir das Video geholfen hat, abonniere Fox Money und schreib mir in die Kommentare: Ist Bitcoin unter siebzigtausend Dollar für dich eine Chance oder ein Warnsignal? Wichtig: Das ist keine Anlageberatung. Bis zum nächsten Mal!"
+  }
+ ],
+ "thumbnail": {
+  "top": "BITCOIN CRASH",
+  "big": "< 70.000 $",
+  "bottom": "WARUM?!",
+  "color": "red",
+  "arrow": "down",
+  "character": {"kind": "trader", "mood": "shocked"},
+  "coin": "₿"
+ }
+}
