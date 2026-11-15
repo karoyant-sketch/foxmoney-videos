@@ -7,13 +7,13 @@
   "characters": {
     "narrator": {"name": "Erzählerin", "color": "#3B2A6B", "voice_id": "krYs4UGlOJ9RA8enVbqQ", "voice_name": "Laura – Friendly and calming", "crop": null,
       "look": "", "personality": "warm, ruhig, freundlich, erzählt langsam und deutlich für 2–7-Jährige"},
-    "lotti": {"name": "Lotti", "color": "#FF8A1F", "voice_id": "eRExbYUuATnn9e2um0J1", "voice_name": "Kunibert Cuddle – Sweet & Puppyish", "crop": null,
+    "lotti": {"name": "Lotti", "color": "#FF8A1F", "voice_id": "eRExbYUuATnn9e2um0J1", "voice_name": "Kunibert Cuddle – Sweet & Puppyish", "crop": {"cx": 0.21, "cy": 0.39, "size": 0.42},
       "look": "small curious young fox girl, bright orange fur with white chest and white tail tip, sunny yellow neckerchief, big green eyes",
       "personality": "neugierig, mutig, fröhlich, stellt Fragen, singt gern – die Hauptfigur"},
-    "brummo": {"name": "Brummo", "color": "#2F7DE1", "voice_id": "t2zWZYsCOBrT1IoVhmQP", "voice_name": "Edgar Elephant – Gentle Cartoon Voice", "crop": null,
+    "brummo": {"name": "Brummo", "color": "#2F7DE1", "voice_id": "t2zWZYsCOBrT1IoVhmQP", "voice_name": "Edgar Elephant – Gentle Cartoon Voice", "crop": {"cx": 0.5, "cy": 0.38, "size": 0.44},
       "look": "chubby cuddly little brown bear cub, caramel-brown fur, light tan belly, blue denim overalls with one round button, small round ears",
       "personality": "gemütlich, lustig, ein bisschen tollpatschig, liebt Beeren und Honig, hat ein großes Herz"},
-    "pip": {"name": "Pip", "color": "#E5383B", "voice_id": "jNcIGmn4T3ZFrZDsIroj", "voice_name": "Skylo – Crazy & Funny", "crop": null,
+    "pip": {"name": "Pip", "color": "#E5383B", "voice_id": "jNcIGmn4T3ZFrZDsIroj", "voice_name": "Skylo – Crazy & Funny", "crop": {"cx": 0.688, "cy": 0.78, "size": 0.23},
       "look": "tiny round sky-blue songbird with a little red knitted beanie hat, orange beak, small wings",
       "personality": "klein, flink, schlau, erklärt Zahlen, Farben und Buchstaben, macht Witze"}
   }
