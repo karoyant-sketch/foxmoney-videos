@@ -15,6 +15,8 @@ type Scene = {
   images?: string[];
   clip?: string | null;
   clipFrames?: number;
+  clips?: string[];
+  clipsFrames?: number[];
   camera?: string;
   title?: string | null;
   outro?: boolean;
@@ -72,6 +74,18 @@ const Picture: React.FC<{src: string; camera?: string; p: number; bounce: number
   );
 };
 
+const ClipFill: React.FC<{src: string; frames: number; total: number; fade: boolean}> = ({src, frames, total, fade}) => {
+  const f = useCurrentFrame();
+  const rate = Math.max(0.7, Math.min(1, frames / total));
+  const op = fade ? interpolate(f, [0, 12], [0, 1], {extrapolateRight: 'clamp'}) : 1;
+  const video = <OffthreadVideo src={staticFile(src)} muted playbackRate={rate} style={{width: '100%', height: '100%', objectFit: 'cover'}} />;
+  return (
+    <AbsoluteFill style={{opacity: op, transform: `scale(${1.02 + 0.03 * (f / total)})`}}>
+      {frames / rate >= total ? video : <Loop durationInFrames={Math.max(30, Math.floor(frames / rate))}>{video}</Loop>}
+    </AbsoluteFill>
+  );
+};
+
 const SceneView: React.FC<{sc: Scene; i: number}> = ({sc, i}) => {
   const f = useCurrentFrame(); // local, starts TRANS frames before sc.start (except first)
   const lead = i === 0 ? 0 : TRANS;
@@ -84,7 +98,23 @@ const SceneView: React.FC<{sc: Scene; i: number}> = ({sc, i}) => {
   const sway = Math.sin(t * 0.7 + i) * 0.35;
 
   let content: React.ReactNode;
-  if (sc.kind === 'song') {
+  if (sc.kind === 'song' && sc.clips && sc.clips.length) {
+    const n = sc.clips.length;
+    const per = Math.ceil(total / n);
+    content = (
+      <>
+        {sc.clips.map((c, k) => {
+          const cf = (sc.clipsFrames || [])[k] || 150;
+          const len = per + (k < n - 1 ? 12 : 0);
+          return (
+            <Sequence key={k} from={k * per} durationInFrames={len}>
+              <ClipFill src={c} frames={cf} total={len} fade={k > 0} />
+            </Sequence>
+          );
+        })}
+      </>
+    );
+  } else if (sc.kind === 'song') {
     const bpm = sc.bpm || 110;
     const beat = (Math.max(0, local) / FPS) * (bpm / 60);
     const bounce = 0.018 * Math.pow(Math.max(0, Math.cos(beat * Math.PI * 2)), 6);
@@ -104,13 +134,7 @@ const SceneView: React.FC<{sc: Scene; i: number}> = ({sc, i}) => {
       </>
     );
   } else if (sc.clip) {
-    content = (
-      <AbsoluteFill style={{transform: `scale(${1.02 + 0.04 * p})`}}>
-        <Loop durationInFrames={Math.max(30, sc.clipFrames || 150)}>
-          <OffthreadVideo src={staticFile(sc.clip)} muted style={{width: '100%', height: '100%', objectFit: 'cover'}} />
-        </Loop>
-      </AbsoluteFill>
-    );
+    content = <ClipFill src={sc.clip} frames={sc.clipFrames || 150} total={total} fade={false} />;
   } else {
     content = <Picture src={sc.image} camera={sc.camera} p={p} bounce={0} sway={sway} />;
   }

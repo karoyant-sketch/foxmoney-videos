@@ -1,68 +1,186 @@
 {
-  "title": "Lotti und die Farben des Regenbogens",
-  "slug": "regenbogen-farben",
-  "bed": true,
-  "bed_volume": 0.35,
-  "scenes": [
-    {"image": "img/s01.jpg", "camera": "zoom_in", "title": "Lotti und die Farben des Regenbogens", "chapter": "Ein Sonnentag im Sonnenwald",
-     "prompt": "Sunny flower meadow in a friendly fairy-tale forest, LOTTI the fox girl, BRUMMO the bear cub and PIP the little bird playing happily together, wide shot, morning light",
-     "lines": [
-      {"who": "narrator", "text": "Lotti und die Farben des Regenbogens."},
-      {"who": "narrator", "text": "Im Sonnenwald scheint die Sonne. Lotti, Brummo und Pip spielen auf der Blumenwiese."}]},
-    {"image": "img/s02.jpg", "clip": "clips/c02.mp4", "camera": "zoom_out",
-     "prompt": "Sudden gentle rain shower over the flower meadow, the three friends hiding under a giant red mushroom with white dots, raindrops sparkling, playful mood, not scary",
-     "clip_prompt": "gentle rain falls, the bear cub shakes water off his fur and laughs, the fox girl holds out her paw to catch raindrops, the bird hops, cozy and funny",
-     "lines": [
-      {"who": "narrator", "text": "Plötzlich: Plitsch, platsch! Es regnet."},
-      {"who": "brummo", "text": "Oh nein! Mein Fell wird ganz nass!"}]},
-    {"image": "img/s03.jpg", "camera": "pan_up", "chapter": "Der Regenbogen ohne Farben",
-     "prompt": "After the rain, a big rainbow arc in the sky that is completely white and colourless like a pale ghost rainbow, the three friends looking up at it surprised, sun breaking through clouds",
-     "lines": [
-      {"who": "lotti", "text": "Schaut mal, ein Regenbogen! Aber er hat ja gar keine Farben!"},
-      {"who": "pip", "text": "Die Farben sind weggeflogen! Wir müssen sie suchen!"}]},
-    {"image": "img/s04.jpg", "camera": "zoom_in", "chapter": "Rot und Gelb",
-     "prompt": "Close-up of BRUMMO the bear cub happily holding a big shiny red strawberry, strawberry bushes around him, LOTTI next to him smiling",
-     "lines": [
-      {"who": "lotti", "text": "Was ist rot?"},
-      {"who": "brummo", "text": "Die Erdbeere! Rot, wie meine Lieblingsbeere. Mmmh!"},
-      {"who": "narrator", "text": "Rot! Die erste Farbe fliegt zurück in den Regenbogen."}]},
-    {"image": "img/s05.jpg", "camera": "pan_right",
-     "prompt": "PIP the little blue bird sitting proudly on top of a huge bright yellow sunflower, LOTTI looking up at him, golden sunshine",
-     "lines": [
-      {"who": "pip", "text": "Und hier! Die Sonnenblume ist gelb!"},
-      {"who": "narrator", "text": "Gelb! Jetzt leuchtet der Regenbogen schon rot und gelb."}]},
-    {"image": "img/s06.jpg", "camera": "pan_left", "chapter": "Grün, Blau und Lila",
-     "prompt": "A small clear blue pond surrounded by lush green grass, a cute green frog on a lily pad, LOTTI and BRUMMO kneeling at the edge looking at the water",
-     "lines": [
-      {"who": "lotti", "text": "Das Gras ist grün, und der Teich ist blau!"},
-      {"who": "narrator", "text": "Grün und blau! Toll gemacht, Lotti!"}]},
-    {"image": "img/s07.jpg", "camera": "zoom_in",
-     "prompt": "BRUMMO the bear cub gently sniffing a beautiful purple flower, PIP sitting on his head, LOTTI clapping, in the sky behind them the rainbow is now full of bright colours",
-     "lines": [
-      {"who": "brummo", "text": "Und diese Blume ist lila!"},
-      {"who": "narrator", "text": "Lila! Jetzt hat der Regenbogen alle seine Farben wieder."}]},
-    {"kind": "song", "song": "song.mp3", "bpm": 112, "chapter": "Das Regenbogen-Lied",
-     "images": ["img/s08a.jpg", "img/s08b.jpg", "img/s08c.jpg"],
-     "prompts": [
-       "LOTTI, BRUMMO and PIP dancing happily in a circle on the flower meadow under a bright colourful rainbow, jumping, arms up, joyful",
-       "LOTTI singing with her paws raised, BRUMMO spinning around, colourful flower petals flying in the air, rainbow behind them",
-       "Close group shot of the three friends dancing and laughing, PIP flying above them, sparkles and bright rainbow colours everywhere"],
-     "music_prompt": "Fröhliches deutsches Kinderlied für 2- bis 7-Jährige, 112 BPM, Dur, Ukulele, Glockenspiel, Klatschen, leichte Drums, helle freundliche Kinder-Gesangsstimme, sehr eingängiger Refrain zum Mitsingen",
-     "lyrics": [
-       "Rot ist die Erdbeere, süß und klein,",
-       "gelb ist die Sonne mit hellem Schein,",
-       "grün ist das Gras auf der Wiese hier,",
-       "blau ist der Teich – und tanzen tun wir!",
-       "Lila, lila, die Blume lacht,",
-       "Regenbogen, so bunt gemacht!",
-       "Hüpf und spring und dreh dich rum,",
-       "alle Farben – bunt, bunt, bunt!"]},
-    {"image": "img/s09.jpg", "camera": "zoom_out", "outro": true,
-     "prompt": "The three friends waving goodbye at the viewer in front of their cozy treehouse at golden sunset, bright rainbow in the sky",
-     "lines": [
-      {"who": "narrator", "text": "Welche Farbe magst du am liebsten? Bis zum nächsten Mal im Sonnenwald!"},
-      {"who": "lotti", "text": "Tschüss!"}]}
-  ],
-  "thumbnail": {"image": "img/thumb.jpg", "top": "Lotti &", "big": "REGEN-BOGEN!", "side": "left",
-    "prompt": "LOTTI the fox girl big in the right half of the frame, joyful wide smile, pointing up at a huge bright colourful rainbow, BRUMMO and PIP next to her, very saturated colours, clean simple composition with empty sky on the left side for text"}
+ "title": "Lotti und die Farben des Regenbogens",
+ "slug": "regenbogen-farben",
+ "bed": true,
+ "bed_volume": 0.35,
+ "scenes": [
+  {
+   "image": "img/s01.jpg",
+   "camera": "zoom_in",
+   "title": "Lotti und die Farben des Regenbogens",
+   "chapter": "Ein Sonnentag im Sonnenwald",
+   "prompt": "Sunny flower meadow in a friendly fairy-tale forest, LOTTI the fox girl, BRUMMO the bear cub and PIP the little bird playing happily together, wide shot, morning light",
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Lotti und die Farben des Regenbogens."
+    },
+    {
+     "who": "narrator",
+     "text": "Im Sonnenwald scheint die Sonne. Lotti, Brummo und Pip spielen auf der Blumenwiese."
+    }
+   ],
+   "clip": "clips/a01.mp4"
+  },
+  {
+   "image": "img/s02.jpg",
+   "clip": "clips/a02.mp4",
+   "camera": "zoom_out",
+   "prompt": "Sudden gentle rain shower over the flower meadow, the three friends hiding under a giant red mushroom with white dots, raindrops sparkling, playful mood, not scary",
+   "clip_prompt": "gentle rain falls, the bear cub shakes water off his fur and laughs, the fox girl holds out her paw to catch raindrops, the bird hops, cozy and funny",
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Plötzlich: Plitsch, platsch! Es regnet."
+    },
+    {
+     "who": "brummo",
+     "text": "Oh nein! Mein Fell wird ganz nass!"
+    }
+   ]
+  },
+  {
+   "image": "img/s03.jpg",
+   "camera": "pan_up",
+   "chapter": "Der Regenbogen ohne Farben",
+   "prompt": "After the rain, a big rainbow arc in the sky that is completely white and colourless like a pale ghost rainbow, the three friends looking up at it surprised, sun breaking through clouds",
+   "lines": [
+    {
+     "who": "lotti",
+     "text": "Schaut mal, ein Regenbogen! Aber er hat ja gar keine Farben!"
+    },
+    {
+     "who": "pip",
+     "text": "Die Farben sind weggeflogen! Wir müssen sie suchen!"
+    }
+   ],
+   "clip": "clips/a03.mp4"
+  },
+  {
+   "image": "img/s04.jpg",
+   "camera": "zoom_in",
+   "chapter": "Rot und Gelb",
+   "prompt": "Close-up of BRUMMO the bear cub happily holding a big shiny red strawberry, strawberry bushes around him, LOTTI next to him smiling",
+   "lines": [
+    {
+     "who": "lotti",
+     "text": "Was ist rot?"
+    },
+    {
+     "who": "brummo",
+     "text": "Die Erdbeere! Rot, wie meine Lieblingsbeere. Mmmh!"
+    },
+    {
+     "who": "narrator",
+     "text": "Rot! Die erste Farbe fliegt zurück in den Regenbogen."
+    }
+   ],
+   "clip": "clips/a04.mp4"
+  },
+  {
+   "image": "img/s05.jpg",
+   "camera": "pan_right",
+   "prompt": "PIP the little blue bird sitting proudly on top of a huge bright yellow sunflower, LOTTI looking up at him, golden sunshine",
+   "lines": [
+    {
+     "who": "pip",
+     "text": "Und hier! Die Sonnenblume ist gelb!"
+    },
+    {
+     "who": "narrator",
+     "text": "Gelb! Jetzt leuchtet der Regenbogen schon rot und gelb."
+    }
+   ],
+   "clip": "clips/a05.mp4"
+  },
+  {
+   "image": "img/s06.jpg",
+   "camera": "pan_left",
+   "chapter": "Grün, Blau und Lila",
+   "prompt": "A small clear blue pond surrounded by lush green grass, a cute green frog on a lily pad, LOTTI and BRUMMO kneeling at the edge looking at the water",
+   "lines": [
+    {
+     "who": "lotti",
+     "text": "Das Gras ist grün, und der Teich ist blau!"
+    },
+    {
+     "who": "narrator",
+     "text": "Grün und blau! Toll gemacht, Lotti!"
+    }
+   ],
+   "clip": "clips/a06.mp4"
+  },
+  {
+   "image": "img/s07.jpg",
+   "camera": "zoom_in",
+   "prompt": "BRUMMO the bear cub gently sniffing a beautiful purple flower, PIP sitting on his head, LOTTI clapping, in the sky behind them the rainbow is now full of bright colours",
+   "lines": [
+    {
+     "who": "brummo",
+     "text": "Und diese Blume ist lila!"
+    },
+    {
+     "who": "narrator",
+     "text": "Lila! Jetzt hat der Regenbogen alle seine Farben wieder."
+    }
+   ],
+   "clip": "clips/a07.mp4"
+  },
+  {
+   "kind": "song",
+   "song": "song.mp3",
+   "bpm": 112,
+   "chapter": "Das Regenbogen-Lied",
+   "images": [
+    "img/s08a.jpg",
+    "img/s08b.jpg",
+    "img/s08c.jpg"
+   ],
+   "prompts": [
+    "LOTTI, BRUMMO and PIP dancing happily in a circle on the flower meadow under a bright colourful rainbow, jumping, arms up, joyful",
+    "LOTTI singing with her paws raised, BRUMMO spinning around, colourful flower petals flying in the air, rainbow behind them",
+    "Close group shot of the three friends dancing and laughing, PIP flying above them, sparkles and bright rainbow colours everywhere"
+   ],
+   "music_prompt": "Fröhliches deutsches Kinderlied für 2- bis 7-Jährige, 112 BPM, Dur, Ukulele, Glockenspiel, Klatschen, leichte Drums, helle freundliche Kinder-Gesangsstimme, sehr eingängiger Refrain zum Mitsingen",
+   "lyrics": [
+    "Rot ist die Erdbeere, süß und klein,",
+    "gelb ist die Sonne mit hellem Schein,",
+    "grün ist das Gras auf der Wiese hier,",
+    "blau ist der Teich – und tanzen tun wir!",
+    "Lila, lila, die Blume lacht,",
+    "Regenbogen, so bunt gemacht!",
+    "Hüpf und spring und dreh dich rum,",
+    "alle Farben – bunt, bunt, bunt!"
+   ],
+   "clips": [
+    "clips/a08a.mp4",
+    "clips/a08b.mp4",
+    "clips/a08c.mp4"
+   ]
+  },
+  {
+   "image": "img/s09.jpg",
+   "camera": "zoom_out",
+   "outro": true,
+   "prompt": "The three friends waving goodbye at the viewer in front of their cozy treehouse at golden sunset, bright rainbow in the sky",
+   "lines": [
+    {
+     "who": "narrator",
+     "text": "Welche Farbe magst du am liebsten? Bis zum nächsten Mal im Sonnenwald!"
+    },
+    {
+     "who": "lotti",
+     "text": "Tschüss!"
+    }
+   ],
+   "clip": "clips/a09.mp4"
+  }
+ ],
+ "thumbnail": {
+  "image": "img/thumb.jpg",
+  "top": "Lotti &",
+  "big": "REGEN-BOGEN!",
+  "side": "left",
+  "prompt": "LOTTI the fox girl big in the right half of the frame, joyful wide smile, pointing up at a huge bright colourful rainbow, BRUMMO and PIP next to her, very saturated colours, clean simple composition with empty sky on the left side for text"
+ }
 }

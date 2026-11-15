@@ -98,6 +98,9 @@ def prepare():
             song_parts.append((start, song))
             imgs = [pub(p) for p in s["images"]]
             rec.update({"image": imgs[0], "images": imgs, "bpm": s.get("bpm", 110)})
+            if s.get("clips"):
+                rec["clips"] = [pub(c) for c in s["clips"]]
+                rec["clipsFrames"] = [int(dur(os.path.join(WORK, c)) * FPS) - 2 for c in s["clips"]]
             lyr = [l for l in s.get("lyrics", []) if l.strip()]
             a, b = sdur * float(s.get("lyrics_start", 0.08)), sdur * float(s.get("lyrics_end", 0.96))
             step = (b - a) / max(1, len(lyr))
