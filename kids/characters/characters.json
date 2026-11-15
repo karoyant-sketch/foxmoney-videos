@@ -1,0 +1,20 @@
+{
+  "sheet": "characters/sheet.png",
+  "sheet_url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/AmU9uSHcyKJAosvPwsIc/image_1794700269311_8ccdcdf1_1794700269465_a92f70b6.png",
+  "sheet_openart_ref": "resource:V6mSbcJ0j60Qm6gBf0t8",
+  "world": "Der Sonnenwald: ein heller, freundlicher Märchenwald mit Blumenwiese, kleinem Teich, Pilzen, Beerensträuchern und einem gemütlichen Baumhaus.",
+  "style_prompt": "high-end 3D animated feature film style for preschool kids, soft global illumination, rounded friendly shapes, big expressive eyes, vibrant saturated colours, cozy and safe mood, no text, no logos, no watermark",
+  "characters": {
+    "narrator": {"name": "Erzählerin", "color": "#3B2A6B", "voice_id": "krYs4UGlOJ9RA8enVbqQ", "voice_name": "Laura – Friendly and calming", "crop": null,
+      "look": "", "personality": "warm, ruhig, freundlich, erzählt langsam und deutlich für 2–7-Jährige"},
+    "lotti": {"name": "Lotti", "color": "#FF8A1F", "voice_id": "eRExbYUuATnn9e2um0J1", "voice_name": "Kunibert Cuddle – Sweet & Puppyish", "crop": null,
+      "look": "small curious young fox girl, bright orange fur with white chest and white tail tip, sunny yellow neckerchief, big green eyes",
+      "personality": "neugierig, mutig, fröhlich, stellt Fragen, singt gern – die Hauptfigur"},
+    "brummo": {"name": "Brummo", "color": "#2F7DE1", "voice_id": "t2zWZYsCOBrT1IoVhmQP", "voice_name": "Edgar Elephant – Gentle Cartoon Voice", "crop": null,
+      "look": "chubby cuddly little brown bear cub, caramel-brown fur, light tan belly, blue denim overalls with one round button, small round ears",
+      "personality": "gemütlich, lustig, ein bisschen tollpatschig, liebt Beeren und Honig, hat ein großes Herz"},
+    "pip": {"name": "Pip", "color": "#E5383B", "voice_id": "jNcIGmn4T3ZFrZDsIroj", "voice_name": "Skylo – Crazy & Funny", "crop": null,
+      "look": "tiny round sky-blue songbird with a little red knitted beanie hat, orange beak, small wings",
+      "personality": "klein, flink, schlau, erklärt Zahlen, Farben und Buchstaben, macht Witze"}
+  }
+}

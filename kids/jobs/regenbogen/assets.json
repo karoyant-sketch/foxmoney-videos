@@ -1,0 +1,99 @@
+{
+ "_el_flow": "GPPJYP52AumytQH3Bo2h",
+ "img/s01.jpg": {
+  "url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/AmU9uSHcyKJAosvPwsIc/image_1794701541636_5501b428_1794701543116_bdc63a3e.png"
+ },
+ "img/s02.jpg": {
+  "url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/AmU9uSHcyKJAosvPwsIc/image_1794701538793_cfa0877f_1794701539393_84fc59b2.png"
+ },
+ "img/s03.jpg": {
+  "url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/AmU9uSHcyKJAosvPwsIc/image_1794701542362_6abd92a3_1794701542870_ff94551e.png"
+ },
+ "img/s04.jpg": {
+  "url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/AmU9uSHcyKJAosvPwsIc/image_1794701544726_38bbe881_1794701545919_3101446f.png"
+ },
+ "img/s05.jpg": {
+  "url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/AmU9uSHcyKJAosvPwsIc/image_1794701598850_dce4986a_1794701599861_2f4f2bf3.png"
+ },
+ "img/s06.jpg": {
+  "url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/AmU9uSHcyKJAosvPwsIc/image_1794701597761_873d98b2_1794701598446_b0964b40.png"
+ },
+ "img/s07.jpg": {
+  "url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/AmU9uSHcyKJAosvPwsIc/image_1794701606780_c398a65e_1794701607273_45c3e967.png"
+ },
+ "img/s08a.jpg": {
+  "url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/AmU9uSHcyKJAosvPwsIc/image_1794701602475_b66d1957_1794701602782_41824264.png"
+ },
+ "img/s08b.jpg": {
+  "url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/AmU9uSHcyKJAosvPwsIc/image_1794701838309_7e6785f0_1794701838867_c9493dd0.png"
+ },
+ "img/s08c.jpg": {
+  "url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/AmU9uSHcyKJAosvPwsIc/image_1794701839251_1db9baa5_1794701839841_6e2aacf7.png"
+ },
+ "img/s09.jpg": {
+  "url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/AmU9uSHcyKJAosvPwsIc/image_1794701841102_0ce42a04_1794701841840_a370d03f.png"
+ },
+ "img/thumb.jpg": {
+  "url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/AmU9uSHcyKJAosvPwsIc/image_1794701840403_78ed51f8_1794701840578_c05ad8ef.png"
+ },
+ "../characters/sheet.png": {
+  "url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/AmU9uSHcyKJAosvPwsIc/image_1794700269311_8ccdcdf1_1794700269465_a92f70b6.png"
+ },
+ "clips/c02.mp4": {
+  "url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-video/AmU9uSHcyKJAosvPwsIc/b0768660e38a41a9aac62577468fc410-metadata_PWElZ1YG_4fe39219f82d_1794702027843_7aa98674.mp4"
+ },
+ "voice/01_01.mp3": {
+  "el_gen": "8rnoqNpOXm36v75vBZnY"
+ },
+ "voice/01_02.mp3": {
+  "el_gen": "zy3sWxKaTgxLYzTVUMdq"
+ },
+ "voice/02_01.mp3": {
+  "el_gen": "WSkvpugeECSddznT0DQN"
+ },
+ "voice/02_02.mp3": {
+  "el_gen": "XIfc25tqDxTlj6caPSFz"
+ },
+ "voice/03_01.mp3": {
+  "el_gen": "Tv3ajNQaZswAhc37Ghen"
+ },
+ "voice/03_02.mp3": {
+  "el_gen": "y55bZq1V6Q03BZJ6GZxA"
+ },
+ "voice/04_01.mp3": {
+  "el_gen": "MKztowmK4TH2bcfIEumz"
+ },
+ "voice/04_02.mp3": {
+  "el_gen": "aLfJzUXtwvlWl8DNy4ux"
+ },
+ "voice/04_03.mp3": {
+  "el_gen": "LGGtTTHwtsy7OIX73H5T"
+ },
+ "voice/05_01.mp3": {
+  "el_gen": "0vXfPg5PyzszQbJic0ZR"
+ },
+ "voice/05_02.mp3": {
+  "el_gen": "MSgwG5yffnPG0Gh1fDaD"
+ },
+ "voice/06_01.mp3": {
+  "el_gen": "TeqOZDvt7TZI9pM9ev7H"
+ },
+ "voice/06_02.mp3": {
+  "el_gen": "uGzVoqUKHgNBbMxS6GRw"
+ },
+ "voice/07_01.mp3": {
+  "el_gen": "FvKxMuogZ6HfCUEQB2a5"
+ },
+ "voice/07_02.mp3": {
+  "el_gen": "ch6PN6YvorsnWRC5Mtxm"
+ },
+ "voice/09_01.mp3": {
+  "el_gen": "u5uXEiyxohHlrnQKJxB9"
+ },
+ "voice/09_02.mp3": {
+  "el_gen": "WFoUKYa5wzOjWpFjlOYC"
+ },
+ "song.mp3": {
+  "el_gen": "tROdAHuXiViNFucUo7y3"
+ }
+}

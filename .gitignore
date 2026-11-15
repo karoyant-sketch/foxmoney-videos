@@ -3,3 +3,6 @@ app/public/voice.wav
 app/src/data.json
 work/
 *.log
+kids/app/public/w/
+kids/app/public/mix.wav
+kids/app/src/data.json
